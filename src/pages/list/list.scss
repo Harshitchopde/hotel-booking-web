@@ -8,7 +8,7 @@
         width: 100%;
         max-width: 1024px;
         display: flex;
-        
+        gap: 20px;
 
         // border: 1px solid blue;
         .listSearch>h1{
@@ -26,6 +26,7 @@
    
             background-color: rgb(230, 109, 22);
             gap: 10px;
+            height: max-content;
         .listItem{
             display: flex;
             gap: 4px;
