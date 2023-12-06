@@ -1,0 +1,29 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    max-width: 1025px;
+    width: 100%;
+    .footerLists{
+        margin: 30px 0px;
+        display: flex;
+        
+        // border: 1px solid red;
+        width: 100%;
+        justify-content: space-between;
+
+        .footerList{
+            font-size: 12px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: darkred;
+            padding: 0;
+           
+        }
+    }
+    .footerCopyRight{
+        font-size: 12px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,152 @@
+.header{
+
+    display: flex;
+
+    background-color: rgb(174, 31, 31);
+    // align-items: center;
+    justify-content: center;
+    // height: 400px;
+  
+    .headerContainer{
+        width: 100%;
+        max-width: 1024px;
+        margin-top: 20px;
+        position: relative;
+        &.showMode{
+            height: 100px;
+        }
+        .headerList{
+            display: flex;
+            height: 40px;
+            gap: 40px;
+           align-items: center;
+           .selected{
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+           .headerListItem{
+            font-size: 24px;
+            font-weight: 400;
+            color: white;
+            display: flex;
+            gap: 10px;
+         
+
+           } 
+
+        }
+        .headerTitle{
+            font-size: 30px;
+            font-weight: 500;
+            margin-top: 50px;
+            color: white;
+        }
+        .headerDes{
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 30px;
+        }
+        .siginButton{
+            border: none;
+            color: rgb(174, 31, 31);
+            margin-top: 20px;
+            font-size: 20;
+            margin-bottom: 60px;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+        .headerSearch{
+            display: flex;
+            position: absolute;
+            bottom: -25px;
+            border: 4px solid yellow;
+            height: 50px;
+            align-items: center;
+            width: 100%;
+            max-width: 1024px;
+            justify-content: space-around;
+            background-color: white;
+
+            .headerSearchItem{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: lightgray;
+                position: relative;
+           
+                .dateRange{
+                    position: absolute;
+                    top:40px;
+                    z-index: 1;
+                 
+                }
+                .options{
+                    position: absolute;
+                    z-index: 1;
+                    // background-color: yellow;
+                    box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.477);
+                    -webkit-box-shadow: 1px 2px 8px 4px rgba(201, 201, 201, 0.47);
+                    border-radius: 10px;
+                    background-color: white;
+                    width: 200px;
+                    top: 35px;
+                    left: 30px;
+                    .optionItem{
+                        display: flex;
+                        gap: 30px;
+                        justify-content: space-around;
+                    
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: black;
+                        margin:10px;
+                        .optionRt{
+                            display: flex;
+                            gap: 5px;
+                            .optionBtn{
+                                padding: 0px 5px;
+                                cursor: pointer;
+                                &:disabled{
+                                    cursor: not-allowed;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+                .headerSearchInput{
+                    border: none;
+                    outline: none;
+                }
+                .headerSearchPerson{
+                    cursor: pointer;
+                }
+                .headerSearchDate{
+                    position: relative;
+                    cursor: pointer;
+                }
+                
+            }
+            .headerSearchButton{
+                border: none;
+                background-color: white;
+                color:rgb(174, 31, 31);
+                font-size: 16px;
+                font-weight: 400;
+                border: 1px solid rgb(174, 31, 31);
+                padding: 5px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                &:disabled{
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

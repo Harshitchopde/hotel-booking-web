@@ -1,0 +1,31 @@
+.featured{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // background-color: red;
+    .featuredContainer{
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+
+        .featuredItem{
+       
+            // background: red;
+            position: relative;
+            .featuredImg{
+                width: 310px;
+                height: 250px;
+                border-radius: 10px;
+            }
+            .featuredTitle{
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+            }
+        }
+    }
+}
