@@ -26,6 +26,7 @@ const SearchList = () => {
                 <span className="dtlPrice">₹999</span>
                 <span className="dtlPricedtl">includes taxes and fees</span>
                 <button className="dtlCheckAvail">See Availability</button>
+                
             </div>
         </div>
       
