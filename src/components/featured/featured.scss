@@ -2,8 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    // background-color: red;
     .featuredContainer{
         width: 100%;
         max-width: 1024px;
@@ -12,8 +10,6 @@
         justify-content: space-around;
 
         .featuredItem{
-       
-            // background: red;
             position: relative;
             .featuredImg{
                 width: 310px;

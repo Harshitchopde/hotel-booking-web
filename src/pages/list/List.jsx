@@ -37,13 +37,13 @@ const List = () => {
               <input type="text" placeholder={`${format(dates[0].startDate, "dd/MM/yyyy")} - ${format(dates[0].endDate, "dd/mm/yyyy")}`} onClick={() => setDateOpen(!dateOpen)} />
               {dateOpen && <DateRange
                 editableDateInputs={true}
-                
+
                 onChange={item => setDates([item.selection])}
-               
+
                 ranges={dates}
               />}
             </div>
-              <label>Options</label>
+            <label>Options</label>
             <div className="options">
               <ul className="optionsUl">
                 <li className="eachOption">
@@ -69,14 +69,14 @@ const List = () => {
               </ul>
             </div>
             <button className="searchbtn">Search</button>
-       
+
           </div>
           <div className="listResult">
-            <SearchList/>
-            <SearchList/>
-            <SearchList/>
-            <SearchList/>
-            <SearchList/>
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
           </div>
         </div>
 

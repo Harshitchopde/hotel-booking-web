@@ -1,21 +1,22 @@
-.listContainer{
+.listContainer {
 
     display: flex;
     justify-content: center;
     margin-top: 20px;
 
-    .listWrapper{
+    .listWrapper {
         width: 100%;
         max-width: 1024px;
         display: flex;
         gap: 20px;
 
         // border: 1px solid blue;
-        .listSearch>h1{
+        .listSearch>h1 {
             font-size: 24px;
             font-weight: bolder;
         }
-        .listSearch{
+
+        .listSearch {
             flex: 2;
             position: sticky;
             top: 10px;
@@ -23,80 +24,91 @@
             flex-direction: column;
             padding: 10px;
             border-radius: 5px;
-   
+
             background-color: rgb(230, 109, 22);
             gap: 10px;
             height: max-content;
-        .listItem{
-            display: flex;
-            gap: 4px;
-            
-            flex-direction: column;
-            
-            
 
-        }
-        .listItem>label{
-            font-size: 14px;
-            font-weight:500;
-            
-        }
-
-        .listItem>input{
-          padding: 5px;
-          border: none;
-          outline: none;
-
-       
-        }
-        .options{
-            padding: 10px;
-        
-            .optionsUl{
-            
-                list-style: none;
+            .listItem {
                 display: flex;
+                gap: 4px;
+
                 flex-direction: column;
-                gap: 20px;
-                .eachOption{
-                  
+
+
+
+            }
+
+            .listItem>label {
+                font-size: 14px;
+                font-weight: 500;
+
+            }
+
+            .listItem>input {
+                padding: 5px;
+                border: none;
+                outline: none;
+
+
+            }
+
+            .options {
+                padding: 10px;
+
+                .optionsUl {
+
+                    list-style: none;
                     display: flex;
-                    justify-content: space-between;
-                
-                    align-items: center;
-                }
-                .eachOption>label{
-                    font-size: 14px;
-                  
-                    font-weight: 400;
-                }.eachOption>input{
-                    font-size: 14px;
-                  border: none;
-                  outline: none;
-                    font-weight: 400;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .eachOption {
+
+                        display: flex;
+                        justify-content: space-between;
+
+                        align-items: center;
+                    }
+
+                    .eachOption>label {
+                        font-size: 14px;
+
+                        font-weight: 400;
+                    }
+
+                    .eachOption>input {
+                        font-size: 14px;
+                        border: none;
+                        outline: none;
+                        font-weight: 400;
+                    }
                 }
             }
-        }
-        .options>label{
-            font-size: 14px;
-            font-weight:500;
-        }
-        li{
-            display: flex;
 
-        }
-        li>input{
-            width: 80px;
-            padding: 5px;
+            .options>label {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            li {
+                display: flex;
+
+            }
+
+            li>input {
+                width: 80px;
+                padding: 5px;
+            }
+
+            .searchbtn {
+                height: 30px;
+                color: white;
+                background-color: rgb(24, 24, 152);
+            }
         }
 
-        .searchbtn{
-            height: 30px;
-            color: white;
-            background-color: rgb(24, 24, 152);
-        }
-        }
-        .listResult{
+        .listResult {
             flex: 5;
         }
 

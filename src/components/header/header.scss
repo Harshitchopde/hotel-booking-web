@@ -1,54 +1,57 @@
-.header{
-
+.header {
     display: flex;
-
     background-color: rgb(174, 31, 31);
-    // align-items: center;
     justify-content: center;
-    // height: 400px;
-  
-    .headerContainer{
+
+    .headerContainer {
         width: 100%;
         max-width: 1024px;
         margin-top: 20px;
         position: relative;
-        &.showMode{
+
+        &.showMode {
             height: 100px;
         }
-        .headerList{
+
+        .headerList {
             display: flex;
             height: 40px;
             gap: 40px;
-           align-items: center;
-           .selected{
-            border: 1px solid white;
-            border-radius: 20px;
-            padding: 10px;
-            cursor: pointer;
-        }
-           .headerListItem{
-            font-size: 24px;
-            font-weight: 400;
-            color: white;
-            display: flex;
-            gap: 10px;
-         
+            align-items: center;
 
-           } 
+            .selected {
+                border: 1px solid white;
+                border-radius: 20px;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            .headerListItem {
+                font-size: 24px;
+                font-weight: 400;
+                color: white;
+                display: flex;
+                gap: 10px;
+
+
+            }
 
         }
-        .headerTitle{
+
+        .headerTitle {
             font-size: 30px;
             font-weight: 500;
             margin-top: 50px;
             color: white;
         }
-        .headerDes{
+
+        .headerDes {
             font-size: 18px;
             font-weight: 400;
             margin-top: 30px;
         }
-        .siginButton{
+
+        .siginButton {
             border: none;
             color: rgb(174, 31, 31);
             margin-top: 20px;
@@ -60,7 +63,8 @@
             cursor: pointer;
 
         }
-        .headerSearch{
+
+        .headerSearch {
             display: flex;
             position: absolute;
             bottom: -25px;
@@ -72,23 +76,23 @@
             justify-content: space-around;
             background-color: white;
 
-            .headerSearchItem{
+            .headerSearchItem {
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 color: lightgray;
                 position: relative;
-           
-                .dateRange{
+
+                .dateRange {
                     position: absolute;
-                    top:40px;
+                    top: 40px;
                     z-index: 1;
-                 
+
                 }
-                .options{
+
+                .options {
                     position: absolute;
                     z-index: 1;
-                    // background-color: yellow;
                     box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.477);
                     -webkit-box-shadow: 1px 2px 8px 4px rgba(201, 201, 201, 0.47);
                     border-radius: 10px;
@@ -96,22 +100,26 @@
                     width: 200px;
                     top: 35px;
                     left: 30px;
-                    .optionItem{
+
+                    .optionItem {
                         display: flex;
                         gap: 30px;
                         justify-content: space-around;
-                    
+
                         font-size: 16px;
                         font-weight: 400;
                         color: black;
-                        margin:10px;
-                        .optionRt{
+                        margin: 10px;
+
+                        .optionRt {
                             display: flex;
                             gap: 5px;
-                            .optionBtn{
+
+                            .optionBtn {
                                 padding: 0px 5px;
                                 cursor: pointer;
-                                &:disabled{
+
+                                &:disabled {
                                     cursor: not-allowed;
                                 }
                             }
@@ -120,30 +128,35 @@
 
                     }
                 }
-                .headerSearchInput{
+
+                .headerSearchInput {
                     border: none;
                     outline: none;
                 }
-                .headerSearchPerson{
+
+                .headerSearchPerson {
                     cursor: pointer;
                 }
-                .headerSearchDate{
+
+                .headerSearchDate {
                     position: relative;
                     cursor: pointer;
                 }
-                
+
             }
-            .headerSearchButton{
+
+            .headerSearchButton {
                 border: none;
                 background-color: white;
-                color:rgb(174, 31, 31);
+                color: rgb(174, 31, 31);
                 font-size: 16px;
                 font-weight: 400;
                 border: 1px solid rgb(174, 31, 31);
                 padding: 5px 20px;
                 cursor: pointer;
                 border-radius: 5px;
-                &:disabled{
+
+                &:disabled {
                     cursor: not-allowed;
                 }
             }

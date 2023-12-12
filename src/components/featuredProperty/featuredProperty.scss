@@ -1,33 +1,38 @@
-.featuredp{
+.featuredp {
     display: flex;
-gap: 20px;
-  
-padding: 10px;
-    .fpItem{
+    gap: 20px;
+
+    padding: 10px;
+
+    .fpItem {
         display: flex;
         flex-direction: column;
         gap: 10px;
 
-        .fpImage{
+        .fpImage {
             width: 230px;
             height: 200px;
-            
+
         }
-        .fpTitle{
+
+        .fpTitle {
             font-size: 18px;
             font-weight: 500;
             // color: black;
         }
-        .fpName{
+
+        .fpName {
             color: lightgray;
             font-size: 16px;
             font-weight: 300;
         }
-        .rating{
+
+        .rating {
 
             display: flex;
             gap: 10px;
-            .ratingNm{
+
+            .ratingNm {
                 border: 1px solid black;
                 background-color: darkblue;
                 color: white;

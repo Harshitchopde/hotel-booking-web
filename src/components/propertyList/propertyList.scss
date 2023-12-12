@@ -1,26 +1,23 @@
-.property{
-
-   
+.property {
     display: flex;
-
     justify-content: space-around;
-    .plItem{
-        // flex: 1;
-        // display: flex;
 
-        img{
+    .plItem {
+        img {
             width: 180px;
             height: 120px;
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
-            
-           
+
+
         }
-        h1{
+
+        h1 {
             font-size: 20px;
             font-weight: 500;
         }
-        h3{
+
+        h3 {
             font-size: 16px;
             font-weight: 400;
         }

@@ -10,7 +10,7 @@ const Navbar = () => {
           <button className="navButton">Login</button>
         </div>
       </div>
-   
+
     </div>
   )
 }

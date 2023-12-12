@@ -1,34 +1,38 @@
-.mailList{
+.mailList {
     background-color: darkred;
     width: 100%;
     display: flex;
     justify-content: center;
-    .mailContainer{
+
+    .mailContainer {
         max-width: 1024px;
-      
+
         display: flex;
         flex-direction: column;
         color: white;
         margin: 50px 0px;
         gap: 20px;
         align-items: center;
-        .mailInfo{
+
+        .mailInfo {
             display: flex;
             gap: 16px;
 
         }
-        .mailInfo>input{
+
+        .mailInfo>input {
             font-size: 16px;
-          outline: none;
-          border-radius: 5px;
-          padding: 3px;
-          color: black;
-        
+            outline: none;
+            border-radius: 5px;
+            padding: 3px;
+            color: black;
+
         }
-        .mailInfo>button{
+
+        .mailInfo>button {
             border-radius: 5px;
             padding: 3px;
         }
-      
+
     }
 }

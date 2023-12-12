@@ -28,8 +28,8 @@ const PropertyList = () => {
         <h1 className="plTitle">Cabens</h1>
         <h3 className="plNumber">234 hotels</h3>
       </div>
-      
-   
+
+
     </div>
   )
 }

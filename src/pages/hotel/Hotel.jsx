@@ -36,13 +36,13 @@ const Hotel = () => {
     setImageIndex(i);
     setOpen(true);
   }
-  const handleArrow =(direction)=>{
+  const handleArrow = (direction) => {
     let newIndx;
-    if(direction==="l"){
-      newIndx = imageIndex===0?5:imageIndex-1;
+    if (direction === "l") {
+      newIndx = imageIndex === 0 ? 5 : imageIndex - 1;
     }
-    else{
-      newIndx = imageIndex===5?0:imageIndex+1;
+    else {
+      newIndx = imageIndex === 5 ? 0 : imageIndex + 1;
     }
     setImageIndex(newIndx);
   }
@@ -53,9 +53,9 @@ const Hotel = () => {
 
       <div className="hotelContainer">
         {open && <div className="slider">
-          <ArrowBackIcon className="back" onClick={()=>handleArrow("l")} />
-          <ArrowForwardIcon className="forward" onClick={()=>handleArrow("r")} />
-          <CancelIcon className="close"  onClick={()=>setOpen(false)}/>
+          <ArrowBackIcon className="back" onClick={() => handleArrow("l")} />
+          <ArrowForwardIcon className="forward" onClick={() => handleArrow("r")} />
+          <CancelIcon className="close" onClick={() => setOpen(false)} />
           <div className="sliderWrapper">
 
             <img className="sliderImg" src={photos[imageIndex].src} alt="" />

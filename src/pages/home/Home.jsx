@@ -3,9 +3,10 @@ import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
 import Featured from '../../components/featured/Featured'
 import PropertyList from "../../components/propertyList/PropertyList"
-import FeaturedProperty from "../../components/featuredProperty/featuredProperty"
+
 import MailList from "../../components/mailList/MailList"
 import Footer from "../../components/footer/Footer"
+import FeaturedProperty from "../../components/featuredProperty/FeaturedProperty"
 
 const Home = () => {
   return (
@@ -18,12 +19,12 @@ const Home = () => {
 
           <Featured />
           <h1>Browser by properties type person</h1>
-          <PropertyList/>
+          <PropertyList />
           <h1>Homes Guest love see the property feature and price</h1>
-          <FeaturedProperty/>
+          <FeaturedProperty />
         </div>
-          <MailList/>
-          <Footer/>
+        <MailList />
+        <Footer />
       </div>
 
 

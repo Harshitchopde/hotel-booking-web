@@ -8,30 +8,28 @@
         margin-top: 50px;
         justify-content: center;
         z-index: 2;
-        .homeThings>h1{
-           color: black;
+
+        .homeThings>h1 {
+            color: black;
             font-size: 24px;
             font-weight: bolder;
-           margin: 20px;
-    
+            margin: 20px;
+
         }
-        .homeThings{
+
+        .homeThings {
             display: flex;
             flex-direction: column;
-
-
             margin-top: 50px;
             color: black;
             max-width: 1024px;
             width: 100%;
-  
-
             margin-top: 30px;
-        
+
 
         }
 
 
     }
-    
+
 }
