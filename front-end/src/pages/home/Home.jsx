@@ -8,7 +8,11 @@ import MailList from "../../components/mailList/MailList"
 import Footer from "../../components/footer/Footer"
 import FeaturedProperty from "../../components/featuredProperty/FeaturedProperty"
 
+
+
+
 const Home = () => {
+
   return (
     <div className='home'>
       <Navbar />

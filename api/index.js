@@ -5,10 +5,10 @@ import mongoose from "mongoose"
 import authRouter from "./routes/auths.js"
 import hotelRouter from "./routes/hotels.js"
 import userRouter from "./routes/users.js"
-
+import cors from "cors"
 import cookieParser from "cookie-parser";
 
-dotenv.config()// without it will not work
+dotenv.config()// without it will not work | to load the enviroment varible
 
 
 const connect = async()=>{
@@ -24,6 +24,7 @@ const connect = async()=>{
     }
 }
 const app = express();
+app.use(cors())
 app.use(cookieParser())
 app.use(express.json())// to use json in respond
 app.use("/api/auth",authRouter)
@@ -47,11 +48,16 @@ app.use((err,req,res,next)=>{
     })
 })
 
-mongoose.connection.on("diconnected",()=>{
-    console.log("disconnected")
-})
-mongoose.connection.on("connected",()=>{
-    console.log("connected")
+// mongoose.connection.on("diconnected",()=>{
+//     console.log("disconnected")
+// })
+// mongoose.connection.on("connected",()=>{
+//     console.log("connected")
+// })
+app.get("/",(req,res)=>{
+    return res.status(200).json({
+        message:"Everything working fine"
+    })
 })
 
 

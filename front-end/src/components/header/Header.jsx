@@ -28,7 +28,7 @@ const Header = ({ type }) => {
     const navigation = useNavigate();
     const [destination, setDestination] = useState();
     const handleSearch = () => {
-        navigation("/hotels", { state: { destination, dates, options } })
+        navigation("/hotel", { state: { destination, dates, options } })
     }
     const handleDetailRoom = (name, op) => {
         console.log("run")

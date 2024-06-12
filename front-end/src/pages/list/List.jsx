@@ -2,11 +2,12 @@ import "./list.scss"
 
 import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
-import { format } from "date-fns"
+import { format, min } from "date-fns"
 import { DateRange } from "react-date-range"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import SearchList from "../../components/searchlist/SearchList"
+import useFetchData from "../../hooks/useFetchHotel"
 
 
 const List = () => {
@@ -18,6 +19,15 @@ const List = () => {
   const [dates, setDates] = useState(location.state.dates)
   const [destination, setDestination] = useState(location.state.destination)
   const [options, setOptions] = useState(location.state.options)
+  const [mini,setMini] = useState(0);
+  const [maxi,setMaxi] = useState(9999);
+  const {data,loading,error,reFetch} = useFetchData(`/hotel?city=${destination}&mini=${mini}&maxi=${maxi}`)
+  // console.log("options : ",options)
+
+  const handleSearchClick = (e)=>{
+    e.preventDefault();
+    reFetch()
+  }
 
   return (
 
@@ -30,7 +40,7 @@ const List = () => {
             <h1>Search</h1>
             <div className="listItem">
               <label>Destination</label>
-              <input type="text" placeholder="Name" />
+              <input type="text" value={destination} onChange={(e)=>setDestination(e.target.value)} placeholder="Name" />
             </div>
             <div className="listItem">
               <label>Check-in date</label>
@@ -48,35 +58,34 @@ const List = () => {
               <ul className="optionsUl">
                 <li className="eachOption">
                   <label>Min price(per night)</label>
-                  <input type="text" />
+                  <input type="text" value={mini} onChange={(e)=>setMini(e.target.value)}/>
                 </li>
                 <li className="eachOption">
                   <label>Max price(per night)</label>
-                  <input type="text" />
+                  <input type="text" value={maxi} onChange={(e)=>setMaxi(e.target.value)} />
                 </li>
                 <li className="eachOption">
                   <label>Adult</label>
-                  <input type="text" />
+                  <input type="number" name="adult" value={options.adult}/>
                 </li>
                 <li className="eachOption">
                   <label>Childern</label>
-                  <input type="text" />
+                  <input type="text" name="childern" value={options.childern} />
                 </li>
                 <li className="eachOption">
                   <label>Room</label>
-                  <input type="text" />
+                  <input type="text" name="room" value={options.room}  />
                 </li>
               </ul>
             </div>
-            <button className="searchbtn">Search</button>
+            <button className="searchbtn" onClick={(e)=>handleSearchClick(e)}>Search</button>
 
           </div>
           <div className="listResult">
-            <SearchList />
-            <SearchList />
-            <SearchList />
-            <SearchList />
-            <SearchList />
+            {
+              loading?"Loading...": data.map((item)=> <SearchList key={item._id} item={item} />)
+            }
+          
           </div>
         </div>
 

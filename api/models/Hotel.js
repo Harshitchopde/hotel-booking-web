@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const hotelSchema = new Schema({
+    title:{
+        type:String,
+        required:true
+    },
     name:{
         type: String,
         required:true,
