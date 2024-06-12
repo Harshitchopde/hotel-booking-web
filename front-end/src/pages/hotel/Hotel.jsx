@@ -16,7 +16,7 @@ const Hotel = () => {
   const location = useLocation()
   console.log(location)
   const [imageIndex, setImageIndex] = useState(0);
-  const {data,loading,error}=useFetchData(`${location.pathname}`)
+  const {data,loading}=useFetchData(`${location.pathname}`)
  console.log("Hotel d: ",data)
 
   const photos = [
@@ -89,8 +89,6 @@ const Hotel = () => {
 
           </div>
           <div className="htlDesContainer">
-
-
             <div className="htldes">
               <h1 className="htldesTitle">{data.title}</h1>
               <p className="htldesPara">{data.desc}</p>
