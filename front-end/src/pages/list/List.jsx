@@ -23,9 +23,9 @@ const List = () => {
   const [maxi,setMaxi] = useState(9999);
   const {data,loading,error,reFetch} = useFetchData(`/hotel?city=${destination}&mini=${mini}&maxi=${maxi}`)
   // console.log("options : ",options)
-
+  // console.log("List : ",data ,mini,maxi,destination)
   const handleSearchClick = (e)=>{
-    e.preventDefault();
+    // e.preventDefault();
     reFetch()
   }
 
