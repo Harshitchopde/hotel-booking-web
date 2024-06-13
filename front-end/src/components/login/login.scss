@@ -1,0 +1,38 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .lContainer{
+        width: 450px;
+        background-color: bisque;
+        height: 400px;
+        font-size: large;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        .lInput{
+            font-size: 30px;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 5px;
+            
+        }
+        .submitBtn{
+            font-size: 30px;
+            border-radius: 5px;
+            width: 130px;
+        }
+        .error{
+            background-color: rgba(255, 0, 0, 0.429);
+            color: red;
+        }
+        
+
+    }
+}

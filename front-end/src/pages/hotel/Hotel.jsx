@@ -5,19 +5,27 @@ import Header from '../../components/header/Header'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CancelIcon from '@mui/icons-material/Cancel';
 import useFetchData from "../../hooks/useFetchHotel";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
+import { dayDifference } from "../../constants/functions";
+import { AuthContext } from "../../context/AuthContext";
+import Reserve from "../../components/reserve/Reserve";
 const Hotel = () => {
   const [open, setOpen] = useState(false);
+  const [openModel, setOpenModel] = useState(true);
   const location = useLocation()
-  console.log(location)
+  const id = location.pathname.split("/")[2];
   const [imageIndex, setImageIndex] = useState(0);
   const {data,loading}=useFetchData(`${location.pathname}`)
- console.log("Hotel d: ",data)
+  const {dates,options} = useContext(SearchContext)
+  const date = dayDifference(dates[0]?.endDate,dates[0]?.startDate)
+  const navigation = useNavigate();
+  const {user} = useContext(AuthContext);
 
   const photos = [
     {
@@ -53,9 +61,17 @@ const Hotel = () => {
     }
     setImageIndex(newIndx);
   }
+  const handleClick = ()=>{
+    if(user){
+
+    }else{
+      navigation("/login")
+    }
+  }
 
   return (
-    <div className="hotel">
+    <div>
+      <div className="hotel">
       <Navbar />
       <Header type={"list"} />
       {
@@ -97,10 +113,10 @@ const Hotel = () => {
               <h1 className="priceTitle">Perfect for a 9-night stay!</h1>
               <span className="pricedtl">location in the real heart of Mumbai Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
               <div className="prices">
-                <strong>₹{data.cheapestRoom} </strong>
-                <span> (9 nights)</span>
+                <strong>₹{data.cheapestRoom *date*options.room} </strong>
+                <span> ({options.room} nights)</span>
               </div>
-              <button className="reserveBtn">Reserve or Book Now!</button>
+              <button  onClick={handleClick} className="reserveBtn">Reserve or Book Now!</button>
             </div>
           </div>
 
@@ -109,6 +125,8 @@ const Hotel = () => {
       }
       <MailList />
       <Footer />
+    </div>
+    {openModel && <Reserve  setOpenModel={setOpenModel} userId={id}/>}
     </div>
   )
 }

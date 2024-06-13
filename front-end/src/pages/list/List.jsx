@@ -12,18 +12,21 @@ import useFetchData from "../../hooks/useFetchHotel";
 const List = () => {
   const [dateOpen, setDateOpen] = useState(false);
   const location = useLocation();
-  const [dates, setDates] = useState(location.state.dates);
-  const [destination, setDestination] = useState(location.state.destination);
-  const [options, setOptions] = useState(location.state.options);
-  const [mini, setMini] = useState(0);
-  const [maxi, setMaxi] = useState(9999);
-  const { data, loading, error, reFetch } = useFetchData(
-    `/hotel?city=${destination}&mini=${mini}&maxi=${maxi}`
-  );
-  const handleSearchClick = (e) => {
-    e.preventDefault();
-    reFetch();
-  };
+  // console.log("hdfaksd")
+
+  // console.log(location)
+  const [dates, setDates] = useState(location.state.dates)
+  const [destination, setDestination] = useState(location.state.destination)
+  const [options, setOptions] = useState(location.state.options)
+  const [mini,setMini] = useState(0);
+  const [maxi,setMaxi] = useState(9999);
+  const {data,loading,error,reFetch} = useFetchData(`/hotel?city=${destination}&mini=${mini}&maxi=${maxi}`)
+  // console.log("options : ",options)
+  // console.log("List : ",data ,mini,maxi,destination)
+  const handleSearchClick = (e)=>{
+    // e.preventDefault();
+    reFetch()
+  }
 
   return (
     <div>

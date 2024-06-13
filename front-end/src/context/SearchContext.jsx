@@ -20,7 +20,7 @@ const SearchReducer = (state,action)=>{
         default : return state
     }
 }
-export const SearchContextProvider = ({childern})=>{
+export const SearchContextProvider = ({children})=>{
     const [state,dispatch] = useReducer(SearchReducer,INITIAL_STATE);
     return (
             <SearchContext.Provider value={{
@@ -29,7 +29,7 @@ export const SearchContextProvider = ({childern})=>{
                 options:state.options,
                 dispatch
             }}>
-                {childern}
+                {children}
             </SearchContext.Provider>
     ) 
 }

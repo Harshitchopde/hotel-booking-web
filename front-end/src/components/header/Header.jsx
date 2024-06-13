@@ -7,12 +7,15 @@ import { CalendarMonthOutlined, Person } from "@mui/icons-material";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 const Header = ({ type }) => {
     const [dateOpen, setDateOpen] = useState(false);
     const [optionsOpen, setOptionsOpen] = useState(false);
+    const {dispatch} = useContext(SearchContext)
     const [options, setOptions] = useState({
         adult: 1,
         childern: 0,
@@ -25,9 +28,11 @@ const Header = ({ type }) => {
             key: 'selection'
         }
     ]);
+    const {user}= useContext(AuthContext);
     const navigation = useNavigate();
     const [destination, setDestination] = useState();
     const handleSearch = () => {
+        dispatch({type:"NEW_SEARCH",payload:{destination,dates,options}});
         navigation("/hotel", { state: { destination, dates, options } })
     }
     const handleDetailRoom = (name, op) => {
@@ -70,7 +75,7 @@ const Header = ({ type }) => {
                 {type !== "list" &&
                     <><h1 className="headerTitle">Enjoy the life at its fullest as it is last</h1>
                         <div className="headerDes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, quibusdam voluptatum! Adipisci pariatur eum at.</div>
-                        <button className="siginButton">Sigin / Register</button>
+                      {!user &&  <button className="siginButton">Sigin / Register</button>}
 
                         <div className="headerSearch">
                             <div className="headerSearchItem">

@@ -5,6 +5,7 @@ import mongoose from "mongoose"
 import authRouter from "./routes/auths.js"
 import hotelRouter from "./routes/hotels.js"
 import userRouter from "./routes/users.js"
+import roomRouter from "./routes/rooms.js"
 import cors from "cors"
 import cookieParser from "cookie-parser";
 
@@ -30,6 +31,7 @@ app.use(express.json())// to use json in respond
 app.use("/api/auth",authRouter)
 app.use("/api/hotel",hotelRouter)
 app.use("/api/user",userRouter)
+app.use("/api/room",roomRouter)
 app.get("/user",(req,res)=>{
     res.send("hello guys")
 })
