@@ -17,7 +17,7 @@ import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 const Hotel = () => {
   const [open, setOpen] = useState(false);
-  const [openModel, setOpenModel] = useState(true);
+  const [openModel, setOpenModel] = useState(false);
   const location = useLocation()
   const id = location.pathname.split("/")[2];
   const [imageIndex, setImageIndex] = useState(0);
@@ -63,7 +63,7 @@ const Hotel = () => {
   }
   const handleClick = ()=>{
     if(user){
-
+        setOpenModel(true)
     }else{
       navigation("/login")
     }
@@ -126,7 +126,7 @@ const Hotel = () => {
       <MailList />
       <Footer />
     </div>
-    {openModel && <Reserve  setOpenModel={setOpenModel} userId={id}/>}
+    {openModel && <Reserve  setOpenModel={setOpenModel} hotelId={id}/>}
     </div>
   )
 }

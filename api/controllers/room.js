@@ -39,6 +39,26 @@ export const updateRoom =async (req,res,next)=>{
         res.status(500).send("not added"+e)
     }
 }
+export const updateTheAvaiblility = async(req,res,next)=>{
+    console.log(req);
+    
+    try{
+        await Room.updateOne(
+            {"roomNumbers._id":req.params.id},
+            {
+                $push: {
+                    "roomNumbers.$.unavailableDates":req.body.dates
+                }
+            }
+        )   
+        res.status(200).json({
+            message:"Added successful"
+        });
+    }
+    catch(e){
+        res.status(500).send("not added"+e)
+    }
+}
 // // DELETE
 export const deleteRoom =async (req,res,next)=>{
     // const newRoom = new Room(req.body);

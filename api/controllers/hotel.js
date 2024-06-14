@@ -1,4 +1,5 @@
 import Hotel from "../models/Hotel.js"
+import Room from "../models/Room.js";
 import { createError } from "../utils/error.js";
 
 //CREATE
@@ -12,6 +13,22 @@ export const addHotel =async (req,res,next)=>{
     catch(e){
         // res.status(500).send("not added"+e)
         next(createError(500,e.message))
+    }
+}
+// GET Hotel room
+export const getHotelRooms = async(req,res,next)=>{
+    const hotelId = req.params.hotelId;
+    try {
+        const hotel = await Hotel.findById(hotelId);
+        const list = await Promise.all(
+            hotel.rooms.map((room)=>{
+                return Room.findById(room);
+            })
+        )
+        res.status(200).json(list)
+        
+    } catch (error) {
+        
     }
 }
 

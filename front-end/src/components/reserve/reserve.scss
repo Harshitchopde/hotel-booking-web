@@ -1,0 +1,72 @@
+.reserve{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.804);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    .rContainer{
+        padding: 20px;
+        width: 20vw;
+        height: 40vh;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        .cross{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .rItem{
+          display: flex;
+          justify-content: space-between;
+          .rItemInfo{
+            display: flex;
+            flex-direction: column;
+            .rTitle{
+                font-size: 20px;
+                font-weight: 700;
+
+            }
+            .rDesc{
+                font-size: medium;
+            }
+            .rMax{
+                font-size: small;
+                font-weight: 200;
+            }
+          }
+          .rooms{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                .room{
+                    display: flex;
+                    flex-direction: column;
+                }
+          }
+
+        }
+        .reserve_now{
+                font-size: 12px;
+                background-color: darkorange;
+                color: white;
+                border: none;
+                padding: 8px;
+                position: absolute;
+                bottom: 0;
+                margin-left: 7vw;
+                margin-bottom: 10px;
+                display: flex;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+        }
+    }
+}
