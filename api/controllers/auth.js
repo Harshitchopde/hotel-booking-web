@@ -18,7 +18,7 @@ export const register = async(req,res,next)=>{
 
 }
 export const login = async (req,res,next)=>{
-    console.log(req.body)
+    // console.log(req.body)
   try {
     const user = await User.findOne({username:req.body.username});
     if(!user) return next(createError(400,"User not found!"))
@@ -26,7 +26,7 @@ export const login = async (req,res,next)=>{
     const isCorrect = bcrypt.compareSync(req.body.password, password); // true
     if(!isCorrect) return next(createError(400,"Wrong password or username"));
     // res.status(200).json({...otherDetail})
-    // create token
+    // create token-
     const token = jwt.sign({id:user._id,isAdmin:user.isAdmin},process.env.JWT)
     console.log("token : ",token);
     
