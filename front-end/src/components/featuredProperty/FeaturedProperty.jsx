@@ -2,7 +2,7 @@ import useFetchData from "../../hooks/useFetchHotel"
 import "./featuredProperty.scss"
 const FeaturedProperty = () => {
   const {loading,data,error} = useFetchData("/hotel?featured=true&limit=4")
-  console.log("data",data)
+  // console.log("data",data)
   return (
     <div className="featuredp">
       {
