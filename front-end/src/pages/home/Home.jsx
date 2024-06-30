@@ -19,8 +19,6 @@ const Home = () => {
       <Header type={"listt"} />
       <div className="homeContainer">
         <div className="homeThings">
-
-
           <Featured />
           <h1>Browser by properties type person</h1>
           <PropertyList />
